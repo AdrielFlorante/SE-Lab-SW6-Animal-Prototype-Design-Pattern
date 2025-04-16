@@ -1,5 +1,10 @@
 public class TestAnimal {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        AnimalRegistry registry = new AnimalRegistry();
+
+        Animal fluffy = registry.createSheep("Sheep");
+        fluffy.makeSound();
+        System.out.println("Type: " + fluffy.getType() + ", Name: " + ((Sheep) fluffy).getName());
+
     }
 }

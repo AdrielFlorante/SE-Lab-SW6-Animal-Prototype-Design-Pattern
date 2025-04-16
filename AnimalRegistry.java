@@ -1,21 +1,11 @@
 public class AnimalRegistry {
-    private Sheep sheepPrototype;
-    private Cow cowPrototype;
-    private Horse horsePrototype;
-
-    public AnimalRegistry (Sheep sheepPrototype) {
-        this.sheepPrototype = sheepPrototype;
-    }
-
-    public AnimalRegistry (Cow cowPrototype) {
-        this.cowPrototype = cowPrototype;
-    }
-
-    public AnimalRegistry (Horse horsePrototype) {
-        this.horsePrototype = horsePrototype;
-    }
+    private Sheep sheepPrototype = new Sheep("Prototype Sheep");
+    private Cow cowPrototype = new Cow();
+    private Horse horsePrototype = new Horse();
 
     public Animal createSheep (String name) {
-        return Animal;
+        Sheep newSheep = sheepPrototype.clone();
+        newSheep.setName(name);
+        return newSheep;
     }
 }
